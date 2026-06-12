@@ -13,6 +13,7 @@
 ## 文档结构
 
 - `analysis.md` - 完整的执行路径分析、失败原因和日志添加建议
+- `verification.md` - 快速验证方法（不需要修改 AOSP 源码）
 - `README.md` - 本文件
 
 ## 适用版本
