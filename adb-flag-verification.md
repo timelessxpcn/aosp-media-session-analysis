@@ -6,6 +6,26 @@
 
 ---
 
+## ⚡ 快速修复（如果你遇到 list 有值但 get 返回 null）
+
+```bash
+# 问题现象：
+# cmd device_config list | grep flag → 有值
+# cmd device_config get namespace flag → null
+
+# 解决方案：手动设置 flag 值
+adb shell cmd device_config put media_solutions enable_screen_off_scanning true
+adb shell cmd device_config put media_better_together enable_full_scan_with_media_content_control true
+
+# 验证
+adb shell cmd device_config get media_solutions enable_screen_off_scanning
+# 应该返回 true 而不是 null
+```
+
+**注意：** 设备重启后会失效，需要重新执行。
+
+---
+
 ## 一、快速诊断流程（30 秒）
 
 ### 1.1 一键诊断脚本
